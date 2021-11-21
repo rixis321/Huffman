@@ -1,28 +1,18 @@
 #include "Wezel.h"
 #include <string>
+#include <map>
+#include <queue>
 
 using namespace std;
 
-void createList(Wezel* korzen, string s)
+void createList( map<char,int> mapa)
 {
-	Wezel* a;
-	korzen = nullptr;
+	map<char, int> kontener = mapa;
 
-	for (int i = 0; i < s.size(); i++)
+	priority_queue<Wezel*, vector<Wezel*>> wezly;
+	for (auto d : kontener)
 	{
-		a = korzen;
-		while (a->znak = s[i])
-		{
-			a = a->nastepny;
-		}
-		if (!a)
-		{
-			a = new Wezel;
-			a->nastepny = korzen;
-			a->znak = s[i];
-			korzen = a;
-		}
-		a->count++;
+		wezly.push(new Wezel(d.first, d.second));
 	}
-
+	
 }

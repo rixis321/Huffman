@@ -4,14 +4,23 @@ struct Wezel
 {
 	Wezel* prawy;
 	Wezel* lewy;
-	Wezel* nastepny;
 	char znak;
 	int count;
 
-
 	Wezel()
 	{
-		lewy = prawy = nastepny = nullptr;
+		lewy = prawy = nullptr;
 		count = 0;
+	}
+	Wezel(char n, int c)
+	{
+		znak = n;
+		count = c;
+	}
+	
+	~Wezel()
+	{
+		delete lewy;
+		delete prawy;
 	}
 };

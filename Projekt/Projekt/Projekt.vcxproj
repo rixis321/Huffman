@@ -141,10 +141,12 @@
   <ItemGroup>
     <ClCompile Include="Lista.cpp" />
     <ClCompile Include="Projekt.cpp" />
+    <ClCompile Include="wczytaj.cpp" />
     <ClCompile Include="Wezel.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Lista.h" />
+    <ClInclude Include="wczytaj.h" />
     <ClInclude Include="Wezel.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

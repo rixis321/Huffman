@@ -4,6 +4,8 @@
 #include <iostream>
 #include "Wezel.h"
 #include "Lista.h"
+#include "wczytaj.h"
+#include <map>
 int main(int argc, char* argv[])
 {
     for (int i = 0; i < argc; i++)
@@ -42,14 +44,27 @@ int main(int argc, char* argv[])
             cout << "-i plik wejsciowy" << endl;
             cout << "-o plik wejsciowy" << endl;
             cout << "-t tryb: k-kompresja, d-dekompresja" << endl;
-            cout << "-s plik ze słownikiem" << endl;
+            cout << "-s plik ze slownikiem" << endl;
         }
     }
 
 
+    //-----------------------------------------DO SPRAWDZANIA MAPY-------------------------------------------
+    string name = "konorraad";
+    string plik;
+    cout <<  "podaj nazwe pliku:" << endl;
+    cin >> plik;
+    map<char, int> mapa = wczytaj(plik);
+    createList(mapa);
+    for (map<char, int>::iterator it = mapa.begin(); it != mapa.end(); ++it)
+    {
+        cout << it->first << "----" << it->second << "-----" << endl;
+    }
+    
+   
 
-    string name = "Konrad";
-    Wezel *p1;
-    createList(p1, name);
+    return 0;
+  
+  
 }
 
