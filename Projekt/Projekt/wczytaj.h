@@ -1,6 +1,5 @@
-#pragma once
-#include <map>
-#include <string>
+#pragma once 
+#include "Lista.h"
 using namespace std;
 
-map<char, int>wczytaj(string nazwa_pliku);
+Lista* wczytaj(string nazwa_pliku);

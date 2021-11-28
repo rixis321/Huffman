@@ -2,10 +2,11 @@
 //
 
 #include <iostream>
-#include "Wezel.h"
 #include "Lista.h"
 #include "wczytaj.h"
-#include <map>
+
+using namespace std;
+
 int main(int argc, char* argv[])
 {
     for (int i = 0; i < argc; i++)
@@ -50,20 +51,25 @@ int main(int argc, char* argv[])
 
 
     //-----------------------------------------DO SPRAWDZANIA MAPY-------------------------------------------
-    string name = "konorraad";
+  /*  string name = "konorraad";
     string plik;
     cout <<  "podaj nazwe pliku:" << endl;
-    cin >> plik;
-    map<char, int> mapa = wczytaj(plik);
+    cin >> plik;*/
+    /*map<char, int> mapa = wczytaj(plik);
     createList(mapa);
     for (map<char, int>::iterator it = mapa.begin(); it != mapa.end(); ++it)
     {
         cout << it->first << "----" << it->second << "-----" << endl;
-    }
-    
-   
+    }*/
+  
+    Lista* lista = new Lista;
+    string plik;
+    cout << "Podaj nazwe pliku :" << endl;
+    cin >> plik;
+    lista = wczytaj(plik);
+    lista->showLista();
+    lista->sortuj();
 
-    return 0;
   
   
 }

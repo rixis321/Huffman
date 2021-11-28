@@ -1,20 +1,15 @@
+#include <string>
 
+using namespace std;
 struct Wezel
 {
 	Wezel* prawy;
 	Wezel* lewy;
+	Wezel* nastepny;
 	char znak;
+	string slowo;
 	int count;
 
-	Wezel()
-	{
-		lewy = prawy = nullptr;
-		count = 0;
-	}
+	
 
-	~Wezel()
-	{
-		delete lewy;
-		delete prawy;
-	}
 };

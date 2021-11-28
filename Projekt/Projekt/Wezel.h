@@ -1,26 +1,21 @@
 #pragma once
-
+#include <string>
+using namespace std;
 struct Wezel
 {
 	Wezel* prawy;
 	Wezel* lewy;
+	Wezel* nastepny;
 	char znak;
+	string slowo;
 	int count;
 
 	Wezel()
 	{
-		lewy = prawy = nullptr;
+		lewy = prawy = nastepny = nullptr;
 		count = 0;
+		slowo = "";
 	}
-	Wezel(char n, int c)
-	{
-		znak = n;
-		count = c;
-	}
-	
-	~Wezel()
-	{
-		delete lewy;
-		delete prawy;
-	}
+
+
 };

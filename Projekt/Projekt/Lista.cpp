@@ -1,18 +1,54 @@
-#include "Wezel.h"
+
+#include "Lista.h"
 #include <string>
-#include <map>
-#include <queue>
+#include <iostream>
 
 using namespace std;
 
-void createList( map<char,int> mapa)
-{
-	map<char, int> kontener = mapa;
+	Wezel* pierwszy;
 
-	priority_queue<Wezel*, vector<Wezel*>> wezly;
-	for (auto d : kontener)
-	{
-		wezly.push(new Wezel(d.first, d.second));
-	}
-	
-}
+    void Lista::push_back(string element)
+    {
+        Wezel* nowy = new Wezel;
+        nowy->slowo = element;
+        if (pierwszy == nullptr)
+        {
+            pierwszy = nowy;
+        }
+        else
+        {
+            Wezel* temp = pierwszy;
+            while (temp->nastepny)
+            {
+                temp = temp->nastepny;
+            }
+            temp->nastepny = nowy;
+            nowy->nastepny = nullptr;
+        }
+    }
+
+    void Lista::showLista()
+    {
+        Wezel* temp = pierwszy;
+        while (temp)
+        {
+            cout << temp->slowo << " ";
+            temp = temp->nastepny;
+        }
+    }
+
+    void Lista::sortuj()
+    {
+        Wezel* temp = pierwszy;
+        while (temp)
+        {
+            string wyraz = temp->slowo;
+            for (int i = 0; i < wyraz.size(); i++)
+            {
+                if()
+            }
+           temp = temp->nastepny;
+        }
+    }
+
+    

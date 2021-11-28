@@ -1,7 +1,20 @@
 #pragma once
 #include "Wezel.h"
-#include <string>
-#include <map>
-using namespace std;
+struct Lista
+{
 
-void createList(map<char, int> mapa);
+    Wezel* pierwszy;
+
+    void push_back(string element);
+
+    void showLista();
+
+    void sortuj();
+
+    Lista()
+    {
+        pierwszy = nullptr;
+    }
+   
+
+};
