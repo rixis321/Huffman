@@ -37,7 +37,7 @@ using namespace std;
         }
     }
 
-    void Lista::sortuj()
+    void Lista::zlicz()
     {
         Wezel* temp = pierwszy;
         while (temp)
@@ -45,7 +45,7 @@ using namespace std;
             string wyraz = temp->slowo;
             for (int i = 0; i < wyraz.size(); i++)
             {
-                if()
+             
             }
            temp = temp->nastepny;
         }

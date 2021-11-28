@@ -9,7 +9,7 @@ struct Lista
 
     void showLista();
 
-    void sortuj();
+    void zlicz();
 
     Lista()
     {

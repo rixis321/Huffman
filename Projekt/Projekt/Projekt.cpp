@@ -68,7 +68,9 @@ int main(int argc, char* argv[])
     cin >> plik;
     lista = wczytaj(plik);
     lista->showLista();
-    lista->sortuj();
+   
+   
+   
 
   
   
