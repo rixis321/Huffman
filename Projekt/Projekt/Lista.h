@@ -10,16 +10,23 @@ struct Lista
 
     void push_back(Wezel *element);
 
+    int getSize();
+
     void showLista();
 
     void zlicz(Lista *lista);
 
     void sortuj();
-    
+
+    void makeTree(Lista *lista);
+
+    void printTree(Lista *lista, string b);
+   
     Lista()
     {
         pierwszy = nullptr;
         size = 0;
+        
     }
    
 

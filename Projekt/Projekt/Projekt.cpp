@@ -4,7 +4,7 @@
 #include <iostream>
 #include "Lista.h"
 #include "wczytaj.h"
-#include "Zamiana.h"
+
 
 using namespace std;
 
@@ -61,6 +61,12 @@ int main(int argc, char* argv[])
     cout << "---------------------------------------------" << endl;
     lista->sortuj();
     lista->showLista();
+    cout << lista->getSize() << endl;
+    cout << "---------------------------------------------" << endl;
+    cout << lista->pierwszy->znak << endl;
+    lista->makeTree(lista);
+    lista->printTree(lista, " ");
+    cout << lista->pierwszy->znak << endl;
     
     /*cout << lista->pierwszy->count << "," << lista->pierwszy->nastepny->count << endl;
     cout << lista->pierwszy->znak << "," << lista->pierwszy->nastepny->znak << endl;*/

@@ -3,7 +3,7 @@
 #include <string>
 #include <iostream>
 #include<map>
-#include "Zamiana.h"
+
 
 using namespace std;
 
@@ -47,6 +47,11 @@ using namespace std;
             temp->nastepny = nowy;
             nowy->nastepny = nullptr;
         }
+    }
+
+    int Lista::getSize()
+    {
+        return size;
     }
 
     void Lista::showLista()
@@ -111,13 +116,58 @@ using namespace std;
                  }
                  p = p->nastepny;
              }
-
-             int x = temp->count;
-             temp->count = min->count;
-             min->count = x;
-             temp = temp->nastepny;
+            char a = temp->znak;
+            int x = temp->count;
+            temp->count = min->count;
+            temp->znak = min->znak;
+            min->count = x;
+            min->znak = a;
+            temp = temp->nastepny;
          }
          
+     }
+
+     void Lista::makeTree(Lista* lista)
+     {
+         int counter = lista->getSize();
+         
+         while (counter > 1)
+         {
+             
+             Wezel* temp1 = lista->pierwszy;
+             Wezel* temp2 = lista->pierwszy->nastepny;
+             if (temp2 == nullptr)
+             {
+                 break;
+             }
+             lista->pierwszy = temp2->nastepny;
+             Wezel* nowy = new Wezel;
+             nowy->count = temp1->count + temp2->count;
+             if (temp1->count <= temp2->count)
+             {
+                 nowy->lewy = temp1;
+                 nowy->prawy = temp2;
+             }
+             lista->push_back(nowy);
+             lista->sortuj();
+             counter--;
+         }
+     }
+
+     void Lista::printTree(, string b)
+     {
+         Wezel* temp = pierwszy;
+         
+
+         if (!temp)
+         {
+             cout << temp->znak << " " << b << endl;
+
+         }
+         else
+         {
+             
+         }
      }
  
 
