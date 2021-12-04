@@ -3,6 +3,7 @@
 #include <string>
 #include <iostream>
 #include<map>
+#include "Zamiana.h"
 
 using namespace std;
 
@@ -30,8 +31,6 @@ using namespace std;
     void Lista::push_back(Wezel *element)
     {
         Wezel* nowy = element;
-        nowy->znak = element->znak;
-        nowy->count = element->count;
         if (pierwszy == nullptr)
         {
             pierwszy = nowy;
@@ -90,9 +89,28 @@ using namespace std;
    
         }
 
-        *lista = *lista2;
-        
-       
+        *lista = *lista2; 
     }
+
+     void Lista::sortuj()
+     {
+         Wezel* temp = pierwszy;
+         while (temp)
+         {
+             Wezel* p1 = temp;
+             Wezel* p2 = p1->nastepny;
+             if (p2 != nullptr)
+             {
+                 if (p1->count > p2->count)
+                 {
+                     temp = zamiana(p1, p2);
+                 }
+
+                 temp = temp->nastepny;
+             }
+            
+         }
+     }
+ 
 
     

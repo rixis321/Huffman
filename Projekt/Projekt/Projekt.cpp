@@ -4,6 +4,7 @@
 #include <iostream>
 #include "Lista.h"
 #include "wczytaj.h"
+#include "Zamiana.h"
 
 using namespace std;
 
@@ -68,6 +69,9 @@ int main(int argc, char* argv[])
     cin >> plik;
     lista = wczytaj(plik);
     lista->zlicz(lista);
+    lista->showLista();
+    cout << "---------------------------------------------" << endl;
+    lista->sortuj();
     lista->showLista();
     /*cout << lista->pierwszy->count << "," << lista->pierwszy->nastepny->count << endl;
     cout << lista->pierwszy->znak << "," << lista->pierwszy->nastepny->znak << endl;*/

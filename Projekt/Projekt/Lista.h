@@ -11,8 +11,10 @@ struct Lista
 
     void showLista();
 
-   void zlicz(Lista *lista);
+    void zlicz(Lista *lista);
 
+    void sortuj();
+    
     Lista()
     {
         pierwszy = nullptr;

@@ -17,5 +17,6 @@ struct Wezel
 		slowo = "";
 	}
 
-
+	
+	
 };
