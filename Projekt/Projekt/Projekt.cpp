@@ -51,18 +51,6 @@ int main(int argc, char* argv[])
     }
 
 
-    //-----------------------------------------DO SPRAWDZANIA MAPY-------------------------------------------
-  /*  string name = "konorraad";
-    string plik;
-    cout <<  "podaj nazwe pliku:" << endl;
-    cin >> plik;*/
-    /*map<char, int> mapa = wczytaj(plik);
-    createList(mapa);
-    for (map<char, int>::iterator it = mapa.begin(); it != mapa.end(); ++it)
-    {
-        cout << it->first << "----" << it->second << "-----" << endl;
-    }*/
-  
     Lista* lista = new Lista;
     string plik;
     cout << "podaj nazwe pliku :" << endl;
@@ -73,6 +61,7 @@ int main(int argc, char* argv[])
     cout << "---------------------------------------------" << endl;
     lista->sortuj();
     lista->showLista();
+    
     /*cout << lista->pierwszy->count << "," << lista->pierwszy->nastepny->count << endl;
     cout << lista->pierwszy->znak << "," << lista->pierwszy->nastepny->znak << endl;*/
     return 0;

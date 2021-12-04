@@ -4,6 +4,7 @@ struct Lista
 {
 
     Wezel* pierwszy;
+    int size;
 
     void push_back(string element);
 
@@ -18,6 +19,7 @@ struct Lista
     Lista()
     {
         pierwszy = nullptr;
+        size = 0;
     }
    
 

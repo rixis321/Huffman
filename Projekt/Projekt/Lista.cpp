@@ -34,6 +34,7 @@ using namespace std;
         if (pierwszy == nullptr)
         {
             pierwszy = nowy;
+            size++;
         }
         else
         {
@@ -42,6 +43,7 @@ using namespace std;
             {
                 temp = temp->nastepny;
             }
+            size++;
             temp->nastepny = nowy;
             nowy->nastepny = nullptr;
         }
@@ -97,19 +99,25 @@ using namespace std;
          Wezel* temp = pierwszy;
          while (temp)
          {
-             Wezel* p1 = temp;
-             Wezel* p2 = p1->nastepny;
-             if (p2 != nullptr)
-             {
-                 if (p1->count > p2->count)
-                 {
-                     temp = zamiana(p1, p2);
-                 }
+             Wezel* min = temp;
+             Wezel* p = temp->nastepny;
 
-                 temp = temp->nastepny;
+             while (p)
+             {
+                 if (min->count > p->count)
+                 {
+                     min = p;
+                   
+                 }
+                 p = p->nastepny;
              }
-            
+
+             int x = temp->count;
+             temp->count = min->count;
+             min->count = x;
+             temp = temp->nastepny;
          }
+         
      }
  
 
