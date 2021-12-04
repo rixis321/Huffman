@@ -7,9 +7,11 @@ struct Lista
 
     void push_back(string element);
 
+    void push_back(Wezel *element);
+
     void showLista();
 
-    void zlicz();
+   void zlicz(Lista *lista);
 
     Lista()
     {

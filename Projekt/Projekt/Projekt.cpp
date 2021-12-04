@@ -64,12 +64,14 @@ int main(int argc, char* argv[])
   
     Lista* lista = new Lista;
     string plik;
-    cout << "Podaj nazwe pliku :" << endl;
+    cout << "podaj nazwe pliku :" << endl;
     cin >> plik;
     lista = wczytaj(plik);
+    lista->zlicz(lista);
     lista->showLista();
-   
-   
+    /*cout << lista->pierwszy->count << "," << lista->pierwszy->nastepny->count << endl;
+    cout << lista->pierwszy->znak << "," << lista->pierwszy->nastepny->znak << endl;*/
+    return 0;
    
 
   
