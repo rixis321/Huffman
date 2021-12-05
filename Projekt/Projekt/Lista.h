@@ -20,7 +20,7 @@ struct Lista
 
     void makeTree(Lista *lista);
 
-    void printTree(Lista *lista, string b);
+    void printTree(Wezel *wezel, string b);
    
     Lista()
     {

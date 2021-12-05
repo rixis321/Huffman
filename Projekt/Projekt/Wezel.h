@@ -15,6 +15,7 @@ struct Wezel
 		lewy = prawy = nastepny = nullptr;
 		count = 0;
 		slowo = "";
+		
 	}
 
 	

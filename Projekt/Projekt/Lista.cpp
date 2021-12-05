@@ -31,6 +31,9 @@ using namespace std;
     void Lista::push_back(Wezel *element)
     {
         Wezel* nowy = element;
+        nowy->znak = element->znak;
+        nowy->lewy = element->lewy;
+        nowy->prawy = element->prawy;
         if (pierwszy == nullptr)
         {
             pierwszy = nowy;
@@ -147,6 +150,7 @@ using namespace std;
              {
                  nowy->lewy = temp1;
                  nowy->prawy = temp2;
+                 nowy->znak = '$';
              }
              lista->push_back(nowy);
              lista->sortuj();
@@ -154,18 +158,24 @@ using namespace std;
          }
      }
 
-     void Lista::printTree(, string b)
+     void Lista::printTree(Wezel *wezel, string b)
      {
-         Wezel* temp = pierwszy;
-         
 
-         if (!temp)
+         if (wezel == nullptr)
          {
-             cout << temp->znak << " " << b << endl;
+             return;
+         }
+       
+
+         if (wezel->znak  != '$')
+         {
+             cout << wezel->znak << " " << b << endl;
 
          }
          else
          {
+             printTree(wezel->lewy, b + "0");
+             printTree(wezel->prawy, b + "1");
              
          }
      }

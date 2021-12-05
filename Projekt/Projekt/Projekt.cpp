@@ -63,11 +63,39 @@ int main(int argc, char* argv[])
     lista->showLista();
     cout << lista->getSize() << endl;
     cout << "---------------------------------------------" << endl;
-    cout << lista->pierwszy->znak << endl;
+   // cout << lista->pierwszy->znak << endl;
     lista->makeTree(lista);
-    lista->printTree(lista, " ");
-    cout << lista->pierwszy->znak << endl;
-    
+    cout << lista->getSize() << endl;
+    //lista->printTree(lista, " ");
+
+    cout << "Tablica kodowania: " << endl;
+    cout << lista->pierwszy->prawy->prawy->prawy->znak << endl;
+   // lista->printTree(lista->pierwszy, " ");
+    /*cout << lista->pierwszy->znak << endl;
+    cout << lista->pierwszy->count << endl;
+
+    cout << lista->pierwszy->lewy->znak << endl;
+    cout << lista->pierwszy->lewy->count << endl;
+
+    cout << lista->pierwszy->lewy->lewy->znak << endl;
+    cout << lista->pierwszy->lewy->lewy->count << endl;
+
+    cout << lista->pierwszy->lewy->prawy->znak << endl;
+    cout << lista->pierwszy->lewy->prawy->count << endl;
+   
+    cout << lista->pierwszy->prawy->znak << endl;
+    cout << lista->pierwszy->prawy->count << endl;
+    cout << lista->pierwszy->prawy->lewy->znak << endl;
+    cout << lista->pierwszy->prawy->lewy->count << endl;
+    cout << lista->pierwszy->prawy->prawy->znak << endl;
+    cout << lista->pierwszy->prawy->prawy->count << endl;*/
+
+
+
+  //  cout << lista->pierwszy->prawy->prawy->lewy->znak << endl;
+   // cout << lista->pierwszy->prawy->prawy->lewy->count << endl;
+  //  cout << lista->pierwszy->prawy->prawy->prawy->znak << endl;
+//    cout << lista->pierwszy->prawy->prawy->prawy->count << endl;
     /*cout << lista->pierwszy->count << "," << lista->pierwszy->nastepny->count << endl;
     cout << lista->pierwszy->znak << "," << lista->pierwszy->nastepny->znak << endl;*/
     return 0;
