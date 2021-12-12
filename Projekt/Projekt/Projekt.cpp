@@ -69,7 +69,7 @@ int main(int argc, char* argv[])
     //lista->printTree(lista, " ");
 
     cout << "Tablica kodowania: " << endl;
-    cout << lista->pierwszy->prawy->prawy->prawy->znak << endl;
+    lista->printTree(lista->pierwszy,"");
    // lista->printTree(lista->pierwszy, " ");
     /*cout << lista->pierwszy->znak << endl;
     cout << lista->pierwszy->count << endl;

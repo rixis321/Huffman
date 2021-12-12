@@ -3,12 +3,12 @@
 using namespace std;
 struct Wezel
 {
-	Wezel* prawy;
-	Wezel* lewy;
-	Wezel* nastepny;
+	Wezel* prawy; // prawy syn
+	Wezel* lewy; 
+	Wezel* nastepny; 
 	char znak;
-	string slowo;
-	int count;
+	string slowo; // 
+	int count; 
 
 	
 

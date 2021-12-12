@@ -139,10 +139,7 @@ using namespace std;
              
              Wezel* temp1 = lista->pierwszy;
              Wezel* temp2 = lista->pierwszy->nastepny;
-             if (temp2 == nullptr)
-             {
-                 break;
-             }
+          
              lista->pierwszy = temp2->nastepny;
              Wezel* nowy = new Wezel;
              nowy->count = temp1->count + temp2->count;
@@ -167,17 +164,21 @@ using namespace std;
          }
        
 
-         if (wezel->znak  != '$')
+         if (wezel->znak != '$')
          {
              cout << wezel->znak << " " << b << endl;
+             printTree(wezel->lewy, b + "0");
+             printTree(wezel->prawy, b + "1");
 
          }
-         else
+         if (wezel->znak == '$')
          {
              printTree(wezel->lewy, b + "0");
              printTree(wezel->prawy, b + "1");
-             
          }
+             
+             
+         
      }
  
 

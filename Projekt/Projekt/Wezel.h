@@ -3,14 +3,14 @@
 using namespace std;
 struct Wezel
 {
-	Wezel* prawy;
-	Wezel* lewy;
-	Wezel* nastepny;
+	Wezel* prawy; // prawy syn
+	Wezel* lewy; // lewy syn
+	Wezel* nastepny; // nastepny element w liscie
 	char znak;
 	string slowo;
-	int count;
+	int count; // ilosc wystapien danego znaku
 
-	Wezel()
+	Wezel() // konstruktor
 	{
 		lewy = prawy = nastepny = nullptr;
 		count = 0;
