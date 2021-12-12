@@ -1,12 +1,12 @@
 #pragma once
 #include "Wezel.h"
+#include <vector>
 // lista Wezlow
 struct Lista
 {
-
     Wezel* pierwszy; // pierwszy element listy
     int size; // zmienna przechowuje dlugosc listy
-
+    vector<string> nazwy;
     
     void push_back(string element);  //funkcja uzywana przy wczytywaniu danych z pliku,
 

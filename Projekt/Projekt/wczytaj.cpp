@@ -15,6 +15,7 @@ Lista* wczytaj(string nazwa_pliku)
         while (plik >> wyraz)
         {
             lista1->push_back(wyraz);
+            lista1->nazwy.push_back(wyraz);
         }
     }
     else

@@ -99,6 +99,8 @@ using namespace std;
    
         }
 
+        lista2->nazwy = lista->nazwy;
+
         *lista = *lista2; 
     }
 
@@ -167,16 +169,13 @@ using namespace std;
          if (wezel->znak != '$')
          {
              cout << wezel->znak << " " << b << endl;
+            
+
+         }
              printTree(wezel->lewy, b + "0");
              printTree(wezel->prawy, b + "1");
 
-         }
-         if (wezel->znak == '$')
-         {
-             printTree(wezel->lewy, b + "0");
-             printTree(wezel->prawy, b + "1");
-         }
-             
+         
              
          
      }

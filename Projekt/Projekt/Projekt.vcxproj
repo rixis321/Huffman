@@ -139,12 +139,18 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="code.cpp" />
+    <ClCompile Include="codeHuffman.cpp" />
+    <ClCompile Include="decode.cpp" />
     <ClCompile Include="Lista.cpp" />
     <ClCompile Include="Projekt.cpp" />
     <ClCompile Include="wczytaj.cpp" />
     <ClCompile Include="Wezel.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="code.h" />
+    <ClInclude Include="codeHuffman.h" />
+    <ClInclude Include="decode.h" />
     <ClInclude Include="Lista.h" />
     <ClInclude Include="wczytaj.h" />
     <ClInclude Include="Wezel.h" />

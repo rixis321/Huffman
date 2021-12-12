@@ -4,7 +4,7 @@
 #include <iostream>
 #include "Lista.h"
 #include "wczytaj.h"
-
+#include "codeHuffman.h"
 
 using namespace std;
 
@@ -70,6 +70,18 @@ int main(int argc, char* argv[])
 
     cout << "Tablica kodowania: " << endl;
     lista->printTree(lista->pierwszy,"");
+
+   
+    cout << "---------------------------------------------" << endl;
+    cout << "Tekst oryginalny" << endl;
+    for (int i = 0; i < lista->nazwy.size(); i++)
+    {
+        cout << lista->nazwy[i] << ",";
+    }
+    string name;
+    cout << "Tekst po zakodowaniu: " << endl;
+    codeHuffman(lista);
+        
    // lista->printTree(lista->pierwszy, " ");
     /*cout << lista->pierwszy->znak << endl;
     cout << lista->pierwszy->count << endl;
