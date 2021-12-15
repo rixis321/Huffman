@@ -67,43 +67,6 @@ using namespace std;
         }
     }
 
-     void Lista::zlicz(Lista * lista)
-    {
-        Lista* lista2 = new Lista;
-        map<char, int> counter;
-        Wezel* temp = pierwszy;
-        while (temp)
-        {
-            string wyraz = temp->slowo;
-            for (char c : wyraz)
-            {
-
-                if (counter.find(c) == counter.end())
-                {
-                    counter[c] = 1;
-                }
-                else
-                {
-                    counter[c]++;
-                }
-            }
-           temp = temp->nastepny;
-        }
-       
-        for (map<char, int>::iterator it = counter.begin(); it != counter.end(); it++)
-        {
-            Wezel* p = new Wezel;
-            p->znak = it->first;
-            p->count = it->second;
-            lista2->push_back(p);
-   
-        }
-
-        lista2->nazwy = lista->nazwy;
-
-        *lista = *lista2; 
-    }
-
      void Lista::sortuj()
      {
          Wezel* temp = pierwszy;

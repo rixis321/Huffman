@@ -3,4 +3,4 @@
 using namespace std;
 
 //funkcja wczytujaca z pliku dane 
-Lista* wczytaj(string nazwa_pliku);
+Lista* wczytaj(Lista* lista, string plik);

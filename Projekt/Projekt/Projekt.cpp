@@ -55,8 +55,7 @@ int main(int argc, char* argv[])
     string plik;
     cout << "podaj nazwe pliku :" << endl;
     cin >> plik;
-    lista = wczytaj(plik);
-    lista->zlicz(lista);
+    wczytaj(lista,plik);
     lista->showLista();
     cout << "---------------------------------------------" << endl;
     lista->sortuj();
@@ -76,12 +75,11 @@ int main(int argc, char* argv[])
     cout << "Tekst oryginalny" << endl;
     for (int i = 0; i < lista->nazwy.size(); i++)
     {
-        cout << lista->nazwy[i] << ",";
+        cout << lista->nazwy[i] << endl;
     }
     string name;
     cout << "Tekst po zakodowaniu: " << endl;
     codeHuffman(lista);
-        
    // lista->printTree(lista->pierwszy, " ");
     /*cout << lista->pierwszy->znak << endl;
     cout << lista->pierwszy->count << endl;
