@@ -1,3 +1,6 @@
-﻿  Projekt.cpp
-C:\Users\zento\source\repos\rixis321\Huffman\Projekt\Projekt\Projekt.cpp(76,23): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+﻿  decode.cpp
+C:\Users\zento\source\repos\rixis321\Huffman\Projekt\Projekt\decode.cpp(7,23): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+  Projekt.cpp
+C:\Users\zento\source\repos\rixis321\Huffman\Projekt\Projekt\Projekt.cpp(77,23): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+  Generowanie kodu...
   Projekt.vcxproj -> C:\Users\zento\source\repos\rixis321\Huffman\Projekt\Debug\Projekt.exe

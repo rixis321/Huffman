@@ -12,7 +12,7 @@ void codeHuffman(Lista* lista)
 		for (int j = 0; j < p.size(); j++)
 		{
 			c = p[j];
-			code(lista->pierwszy, "", c);
+			code(lista->pierwszy, "", c, lista);
 		}
 		
 			

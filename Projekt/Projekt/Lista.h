@@ -7,16 +7,13 @@ struct Lista
     Wezel* pierwszy; // pierwszy element listy
     int size; // zmienna przechowuje dlugosc listy
     vector<string> nazwy;
-    
-    void push_back(string element);  //funkcja uzywana przy wczytywaniu danych z pliku,
+    string zakodowany;
 
     void push_back(Wezel *element); // funkcja sluzaca do dodawania kolejnych wezlow do listy 
 
     int getSize(); // funkcja zwracajaca rozmiar listy
 
     void showLista(); // funkcja pokazuje wszystkie elementy w liscie, sluzy do testowania czy sortowanie dziala itp 
-
-    void zlicz(Lista *lista); // funkcja zliczajaca wystapienia danej litery
 
     void sortuj(); // funkcja sluzaca do sortowania listy od najmniejszych elementow do najwiekszych (zaimplementowane sortowanie przez wybieranie)
 
@@ -28,6 +25,7 @@ struct Lista
     {
         pierwszy = nullptr;
         size = 0;
+        zakodowany = "";
         
     }
    

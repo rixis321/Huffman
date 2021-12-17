@@ -5,6 +5,7 @@
 #include "Lista.h"
 #include "wczytaj.h"
 #include "codeHuffman.h"
+#include "decode.h"
 
 using namespace std;
 
@@ -80,7 +81,12 @@ int main(int argc, char* argv[])
     string name;
     cout << "Tekst po zakodowaniu: " << endl;
     codeHuffman(lista);
+    cout << endl;
+    cout << endl;
+   // string p = decode(lista->pierwszy, lista->zakodowany);
    // lista->printTree(lista->pierwszy, " ");
+
+
     /*cout << lista->pierwszy->znak << endl;
     cout << lista->pierwszy->count << endl;
 

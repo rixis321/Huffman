@@ -1,4 +1,4 @@
 #pragma once
 #include "Lista.h"
 
-void decode(Lista* lista);
+string decode(Wezel* korzen, string coded);

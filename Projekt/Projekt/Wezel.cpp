@@ -7,7 +7,6 @@ struct Wezel
 	Wezel* lewy; 
 	Wezel* nastepny; 
 	char znak;
-	string slowo; // 
 	int count; 
 
 	
