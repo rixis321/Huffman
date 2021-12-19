@@ -64,7 +64,7 @@ int main(int argc, char* argv[])
     cout << lista->getSize() << endl;
     cout << "---------------------------------------------" << endl;
    // cout << lista->pierwszy->znak << endl;
-    lista->makeTree(lista);
+    lista->pierwszy = lista->makeTree(lista);
     cout << lista->getSize() << endl;
     //lista->printTree(lista, " ");
 
@@ -83,8 +83,10 @@ int main(int argc, char* argv[])
     codeHuffman(lista);
     cout << endl;
     cout << endl;
-   // string p = decode(lista->pierwszy, lista->zakodowany);
-   // lista->printTree(lista->pierwszy, " ");
+    cout << "---------------------------------------------" << endl;
+    cout << "Tekst po dekodowaniu" << endl;
+   string p = decode(lista->pierwszy, lista->zakodowany);
+   cout << p << endl;
 
 
     /*cout << lista->pierwszy->znak << endl;

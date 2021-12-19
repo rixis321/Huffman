@@ -3,7 +3,7 @@
 #include <string>
 #include <iostream>
 #include<map>
-
+#include <queue>
 
 using namespace std;
 
@@ -75,30 +75,37 @@ using namespace std;
          }
          
      }
+     struct comp
+     {
+         bool operator()(Wezel* lewy, Wezel* prawy)
+         {
+             return lewy->count > prawy->count;
+         }
+     };
 
-     void Lista::makeTree(Lista* lista)
+     Wezel* Lista::makeTree(Lista* lista)
      {
          int counter = lista->getSize();
-         
+         Wezel* temp = lista->pierwszy;
+         priority_queue < Wezel*, vector<Wezel*>, comp> kolejka;
+         while (temp)
+         {
+             kolejka.push(temp);
+             temp = temp->nastepny;
+         }
+
          while (counter > 1)
          {
-             
-             Wezel* temp1 = lista->pierwszy;
-             Wezel* temp2 = lista->pierwszy->nastepny;
-          
-             lista->pierwszy = temp2->nastepny;
-             Wezel* nowy = new Wezel;
-             nowy->count = temp1->count + temp2->count;
-             if (temp1->count <= temp2->count)
-             {
-                 nowy->lewy = temp1;
-                 nowy->prawy = temp2;
-                 nowy->znak = '$';
-             }
-             lista->push_back(nowy);
-             lista->sortuj();
+             Wezel* e1 = kolejka.top();
+             kolejka.pop();
+             Wezel* e2 = kolejka.top();
+             kolejka.pop();
+             Wezel* temp = new Wezel(e1->count + e2->count, '$', e1, e2);
+             kolejka.push(temp);
              counter--;
          }
+         Wezel* temp2 = kolejka.top();
+         return temp2;
      }
 
      void Lista::printTree(Wezel *wezel, string b)

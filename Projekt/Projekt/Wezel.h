@@ -15,6 +15,13 @@ struct Wezel
 		count = 0;
 		
 	}
+	Wezel(int c, char d, Wezel* l, Wezel* p)
+	{
+		count = c;
+		znak = d;
+		lewy = l;
+		prawy = p;
+	}
 
 	
 	

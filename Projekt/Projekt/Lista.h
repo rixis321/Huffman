@@ -17,7 +17,7 @@ struct Lista
 
     void sortuj(); // funkcja sluzaca do sortowania listy od najmniejszych elementow do najwiekszych (zaimplementowane sortowanie przez wybieranie)
 
-    void makeTree(Lista *lista); // funkcja sluzaca do stworzenia drzewa z listy 
+    Wezel* makeTree(Lista *lista); // funkcja sluzaca do stworzenia drzewa z listy 
 
     void printTree(Wezel *wezel, string b); // funkcja sluzaca do wyswietlenia drzewa (tablica kodowania)
    
