@@ -6,120 +6,73 @@
 #include "wczytaj.h"
 #include "codeHuffman.h"
 #include "decode.h"
+#include "zapisz.h"
+#include "odczytaj_argumenty.h"
+#include "zapisz_drzewo.h"
+#include "zapisz_pomocniczy.h"
+#include "sprawdz_plik.h"
+
 
 using namespace std;
 
 int main(int argc, char* argv[])
 {
-    for (int i = 0; i < argc; i++)
+    string wejscie;
+    string wyjscie;
+    string dzialanie;
+    string slownik;
+    params_result flaga = odczytaj_argumenty(argc, argv, wejscie, wyjscie, dzialanie, slownik);
+    if (flaga == params_help )
     {
-        auto s = string(argv[i]);
-        if (argc > 1)
-        {
-            if (s == "-i")
-            {
-                cout << "plik wejsciowy" << endl;
-            }
-            else if (s == "-o")
-            {
-                cout << "plik wyjsciowy" << endl;
-            }
-            else if (s == "-t")
-            {
-                string s1;
-                cin >> s1;
-                if (s1 == "k")
-                {
-                    cout << "kompresja" << endl;
-                }
-                else if (s1 == "d")
-                {
-                    cout << "dekompresja" << endl;
-                }
-            }
-            else if (s == "s")
-            {
-                cout << "slownik" << endl;
-            }
-        }
-        else
-        {
-            cout << "-i plik wejsciowy" << endl;
-            cout << "-o plik wejsciowy" << endl;
-            cout << "-t tryb: k-kompresja, d-dekompresja" << endl;
-            cout << "-s plik ze slownikiem" << endl;
-        }
+        cout << "W celu uruchomienia programu skorzystaj z dostepnych przelacznikow " << endl;
+        cout << "-i plik wejsciowy" << endl;
+        cout << "-o plik wyjsciowy" << endl;
+        cout << "-t tryb: k-kompresja, d-dekompresja" << endl;
+        cout << "-s plik ze slownikiem" << endl;
     }
-
-
-    Lista* lista = new Lista;
-    string plik;
-    cout << "podaj nazwe pliku :" << endl;
-    cin >> plik;
-    wczytaj(lista,plik);
-    lista->showLista();
-    cout << "---------------------------------------------" << endl;
-    lista->sortuj();
-    lista->showLista();
-    cout << lista->getSize() << endl;
-    cout << "---------------------------------------------" << endl;
-   // cout << lista->pierwszy->znak << endl;
-    lista->pierwszy = lista->makeTree(lista);
-    cout << lista->getSize() << endl;
-    //lista->printTree(lista, " ");
-
-    cout << "Tablica kodowania: " << endl;
-    lista->printTree(lista->pierwszy,"");
-
-   
-    cout << "---------------------------------------------" << endl;
-    cout << "Tekst oryginalny" << endl;
-    for (int i = 0; i < lista->nazwy.size(); i++)
+    else if (flaga == params_error)
     {
-        cout << lista->nazwy[i] << endl;
+        cout << "Blad podczas wprowadzenia parametrow. Sprobuj ponownie " << endl;
     }
-    string name;
-    cout << "Tekst po zakodowaniu: " << endl;
-    codeHuffman(lista);
-    cout << endl;
-    cout << endl;
-    cout << "---------------------------------------------" << endl;
-    cout << "Tekst po dekodowaniu" << endl;
-   string p = decode(lista->pierwszy, lista->zakodowany);
-   cout << p << endl;
+    else
+    {
+        Lista* lista = new Lista;
+        string plik("pomocniczy.txt");
 
+        if (dzialanie == "k")
+        {
+            wczytaj(lista, wejscie);
+            if (sprawdz_plik(wejscie) == true)
+            {
+                lista->sortuj();
+                lista->pierwszy = lista->makeTree(lista);
+                codeHuffman(lista);
+                zapisz_pomocniczy(plik, lista);
+                zapisz(wyjscie, lista);
+                zapisz_drzewo(lista->pierwszy, "", slownik);
 
-    /*cout << lista->pierwszy->znak << endl;
-    cout << lista->pierwszy->count << endl;
+                cout << "Dane zostaly zapisane poprawnie w pliku " << endl;
+            }
+            else
+            {
+                cout << "Nie udalo sie utworzyc pliku." << endl;
+            }
+           
+        }
+        if (dzialanie == "d")
+        {
+            wczytaj(lista, plik);
+            lista->sortuj();
+            lista->pierwszy = lista->makeTree(lista);
+            codeHuffman(lista);
+            string decoded = decode(lista->pierwszy, lista->zakodowany);
+            zapisz(wyjscie, decoded);
+            cout << "Dane zostaly zapisane poprawnie w pliku " << endl;
+        }  
 
-    cout << lista->pierwszy->lewy->znak << endl;
-    cout << lista->pierwszy->lewy->count << endl;
-
-    cout << lista->pierwszy->lewy->lewy->znak << endl;
-    cout << lista->pierwszy->lewy->lewy->count << endl;
-
-    cout << lista->pierwszy->lewy->prawy->znak << endl;
-    cout << lista->pierwszy->lewy->prawy->count << endl;
+    }
    
-    cout << lista->pierwszy->prawy->znak << endl;
-    cout << lista->pierwszy->prawy->count << endl;
-    cout << lista->pierwszy->prawy->lewy->znak << endl;
-    cout << lista->pierwszy->prawy->lewy->count << endl;
-    cout << lista->pierwszy->prawy->prawy->znak << endl;
-    cout << lista->pierwszy->prawy->prawy->count << endl;*/
-
-
-
-  //  cout << lista->pierwszy->prawy->prawy->lewy->znak << endl;
-   // cout << lista->pierwszy->prawy->prawy->lewy->count << endl;
-  //  cout << lista->pierwszy->prawy->prawy->prawy->znak << endl;
-//    cout << lista->pierwszy->prawy->prawy->prawy->count << endl;
-    /*cout << lista->pierwszy->count << "," << lista->pierwszy->nastepny->count << endl;
-    cout << lista->pierwszy->znak << "," << lista->pierwszy->nastepny->znak << endl;*/
     return 0;
-   
-
-  
-  
+     
 }
 

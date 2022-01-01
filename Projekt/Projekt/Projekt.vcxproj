@@ -143,17 +143,27 @@
     <ClCompile Include="codeHuffman.cpp" />
     <ClCompile Include="decode.cpp" />
     <ClCompile Include="Lista.cpp" />
+    <ClCompile Include="odczytaj_argumenty.cpp" />
     <ClCompile Include="Projekt.cpp" />
+    <ClCompile Include="sprawdz_plik.cpp" />
     <ClCompile Include="wczytaj.cpp" />
     <ClCompile Include="Wezel.cpp" />
+    <ClCompile Include="zapisz.cpp" />
+    <ClCompile Include="zapisz_drzewo.cpp" />
+    <ClCompile Include="zapisz_pomocniczy.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="code.h" />
     <ClInclude Include="codeHuffman.h" />
     <ClInclude Include="decode.h" />
     <ClInclude Include="Lista.h" />
+    <ClInclude Include="odczytaj_argumenty.h" />
+    <ClInclude Include="sprawdz_plik.h" />
     <ClInclude Include="wczytaj.h" />
     <ClInclude Include="Wezel.h" />
+    <ClInclude Include="zapisz.h" />
+    <ClInclude Include="zapisz_drzewo.h" />
+    <ClInclude Include="zapisz_pomocniczy.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

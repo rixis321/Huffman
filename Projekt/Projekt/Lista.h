@@ -1,33 +1,68 @@
+/** @file */
 #pragma once
 #include "Wezel.h"
 #include <vector>
-// lista Wezlow
+
+/** Lista wezlow drzewa */
 struct Lista
 {
-    Wezel* pierwszy; // pierwszy element listy
-    int size; // zmienna przechowuje dlugosc listy
-    vector<string> nazwy;
-    string zakodowany;
+    Wezel* pierwszy; ///< adres pierwszego elementu listy
+    int size; ///< rozmiar listy
+    vector<string> nazwy; ///< vector zawierajacy dane pliku wejsciowego, uzywany podczas kodowania
+    string zakodowany; ///< zakodowany tekst
 
-    void push_back(Wezel *element); // funkcja sluzaca do dodawania kolejnych wezlow do listy 
 
-    int getSize(); // funkcja zwracajaca rozmiar listy
 
-    void showLista(); // funkcja pokazuje wszystkie elementy w liscie, sluzy do testowania czy sortowanie dziala itp 
+    /** Funkcja sluzaca do dodawania kolejnych wezlow do listy 
+    @param  element wezel ktory ma byc dodany do listy 
+    */
+    void push_back(Wezel *element); 
 
-    void sortuj(); // funkcja sluzaca do sortowania listy od najmniejszych elementow do najwiekszych (zaimplementowane sortowanie przez wybieranie)
 
-    Wezel* makeTree(Lista *lista); // funkcja sluzaca do stworzenia drzewa z listy 
+   /** Funkcja sluzaca do zwracania rozmiaru listy 
+    @return  ilosc elementow w liscie 
 
-    void printTree(Wezel *wezel, string b); // funkcja sluzaca do wyswietlenia drzewa (tablica kodowania)
+    */
+    int getSize(); 
+
+
+    /** Funkcja sortujaca elementy w liscie od najmniejszego do najwiekszego elementu */
+    void sortuj(); 
+
+     /** Funkcja budujaca drzewo z listy
+     @param  lista lista z ktorej ma byc zbudowane drzewo
+     @return  adres wezla(korzenia) na ktorym zostalo zbudowane drzewo 
+    
+     */
+    Wezel* makeTree(Lista *lista); 
+
+
+     /** Funkcja wyswietla zawartosc drzewa(rekurencyjnie)
+     @param  wezel korzen drzewa
+     @param  b zakodowany znak(na poczatku jest pusty)
+     
+     */
+    void printTree(Wezel *wezel, string b); 
    
-    Lista() // konstruktor
+
+    /** Konstruktor domyslny listy */
+    Lista() 
     {
         pierwszy = nullptr;
         size = 0;
         zakodowany = "";
         
     }
-   
+    
+    /** Struktura porownujaca dwa wezly  */
+    struct comp
+    {
+        /** Operator konwersji porownujacy wartosc lewego  wezla z prawym
+            @param  lewy adres lewego wezla
+            @param  prawy adres prawego wezla
+            @return  wartosc true jesli lewy jest wiekszy od prawego. False jesli prawy jest wiekszy od lewego
+        */
+        bool operator()(Wezel* lewy, Wezel* prawy);
+    };
 
 };

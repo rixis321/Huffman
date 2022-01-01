@@ -39,9 +39,5 @@ Lista* wczytaj(Lista* lista, string nazwa_pliku)
 
         }
     }
-    else
-    {
-        cout << "Plik nie istnieje " << endl;
-    }
     return lista1;
 }

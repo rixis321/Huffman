@@ -19,6 +19,3 @@ void codeHuffman(Lista* lista)
 	}
 }
 
-//vector<string> nazwa;
-// for(int i = 0; i< nazwa.size();i++)
-//	v

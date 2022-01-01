@@ -38,15 +38,7 @@ using namespace std;
         return size;
     }
 
-    void Lista::showLista()
-    {
-        Wezel* temp = pierwszy;
-        while (temp)
-        {
-            cout << temp->znak << " : " << temp->count << endl;  
-            temp = temp->nastepny;
-        }
-    }
+
 
      void Lista::sortuj()
      {

@@ -11,7 +11,6 @@ void code(Wezel * korzen, string s, char c, Lista *p)
 
 	if (c == korzen->znak)
 	{
-		cout << s;
 		p->zakodowany += s;
 		
 	}
